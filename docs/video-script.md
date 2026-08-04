@@ -1,2 +1,1 @@
-# Video — strategy-studio
-Messy exec question → archetype → cell → decision record.
+# Video — strategy-studio\nMessy question → route JSON.

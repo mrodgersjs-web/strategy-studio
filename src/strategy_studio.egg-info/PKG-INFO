@@ -1,0 +1,33 @@
+Metadata-Version: 2.4
+Name: strategy-studio
+Version: 0.1.0
+Summary: Deterministic strategy question router
+License: MIT
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Provides-Extra: test
+Requires-Dist: pytest>=7.4; extra == "test"
+Dynamic: license-file
+
+# strategy-studio
+
+> Deterministic strategy routing — map a strategic question to a bounded workflow cell before agents improvise.
+
+## Employer summary
+
+Strategy Studio shows FDE judgment as routing, not vibes: classify the question, select a cell, run the cell's gates, emit a decision record.
+
+## Public teaser surface
+
+This public repo is the **interface and doctrine** for the router. Deep cell corpora and client-derived packs stay private.
+
+## 60-second path
+
+```bash
+cat docs/routing-model.md
+```
+
+## Related
+- [fde-portfolio](https://github.com/mrodgersjs-web/fde-portfolio)
+- [doctrine](https://github.com/mrodgersjs-web/doctrine)

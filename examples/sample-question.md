@@ -1,1 +1,1 @@
-# example question: Should we build vs buy an eval harness?
+Should we build or buy an evaluation harness for our agent fleet?

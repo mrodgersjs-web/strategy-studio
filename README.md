@@ -1,21 +1,33 @@
 # strategy-studio
 
-> Deterministic strategy routing — map a strategic question to a bounded workflow cell before agents improvise.
+> Deterministic strategy routing — map a question to a bounded cell and gates before agents improvise.
+
+![status](https://img.shields.io/badge/status-public-studio-blue)
 
 ## Employer summary
 
-Strategy Studio shows FDE judgment as routing, not vibes: classify the question, select a cell, run the cell's gates, emit a decision record.
+FDE judgment as **routing, not vibes**. Classify the question, select a cell, list gates, emit a decision record. Deep client cell packs stay private; this public surface is the router.
 
-## Public teaser surface
-
-This public repo is the **interface and doctrine** for the router. Deep cell corpora and client-derived packs stay private.
-
-## 60-second path
+## Proof in 60 seconds
 
 ```bash
-cat docs/routing-model.md
+git clone https://github.com/mrodgersjs-web/strategy-studio.git
+cd strategy-studio
+python3 -m pip install -e ".[test]"
+pytest -q
+strategy-route --json "Should we build or buy an eval harness?"
 ```
 
+Expected: archetype `A2`, cell `cell.build-vs-buy`, non-empty gates.
+
+## Architecture
+
+```text
+question → archetype (A1–A4) → cell id → gates → decision record
+```
+
+## Public boundary
+See [docs/public-boundary.md](docs/public-boundary.md).
+
 ## Related
-- [fde-portfolio](https://github.com/mrodgersjs-web/fde-portfolio)
-- [doctrine](https://github.com/mrodgersjs-web/doctrine)
+- [fde-portfolio](https://github.com/mrodgersjs-web/fde-portfolio) · [doctrine](https://github.com/mrodgersjs-web/doctrine) · [jake-studio](https://github.com/mrodgersjs-web/jake-studio)
