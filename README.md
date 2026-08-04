@@ -23,3 +23,18 @@ See [docs/public-boundary.md](docs/public-boundary.md).
 
 ## Related
 [fde-portfolio](https://github.com/mrodgersjs-web/fde-portfolio) · [doctrine](https://github.com/mrodgersjs-web/doctrine)
+
+
+---
+
+## FDE bar (this studio)
+
+| Practice | Here |
+| --- | --- |
+| Employer summary | top of README |
+| Smoke proof | `bash scripts/smoke.sh` |
+| Public boundary | `docs/public-boundary.md` |
+| Claim under test | strategy-route deterministic |
+| Fleet | [profile](https://github.com/mrodgersjs-web) · [resume](https://github.com/mrodgersjs-web/resume) · [patents](https://github.com/mrodgersjs-web/patents) |
+
+If `scripts/smoke.sh` fails, treat README claims as false until fixed.
