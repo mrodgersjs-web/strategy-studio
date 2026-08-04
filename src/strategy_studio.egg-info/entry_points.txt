@@ -1,2 +1,0 @@
-[console_scripts]
-strategy-route = strategy_studio.cli:main
