@@ -1,6 +1,8 @@
 # strategy-studio
 
 > Deterministic strategy routing — question → archetype → cell → gates.
+**Outcome:** Smoke verifies deterministic strategy routing across A1–A4 archetypes (4 archetypes) in a 60-second proof.
+
 
 ## Employer summary
 FDE judgment as routing, not vibes. Deep client packs stay private; this surface is the router.
