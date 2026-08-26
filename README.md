@@ -35,9 +35,9 @@ See [docs/public-boundary.md](docs/public-boundary.md).
 
 - Script: [`docs/video-script.md`](docs/video-script.md)
 - Recording: [`assets/demo.mp4`](assets/demo.mp4) (75s captioned)
-- Preview: [`assets/demo.gif`](assets/demo.gif)
+- Preview: [`docs/strategy-studio-demo.gif`](docs/strategy-studio-demo.gif)
 
-![demo preview](assets/demo.gif)
+![demo preview](docs/strategy-studio-demo.gif)
 
 ## FDE bar (this studio)
 
