@@ -1,7 +1,9 @@
 """Deterministic archetype router — no LLM required."""
 from __future__ import annotations
-from dataclasses import asdict, dataclass
+
 import re
+from dataclasses import asdict, dataclass
+
 
 @dataclass(frozen=True)
 class Route:

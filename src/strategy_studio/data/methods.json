@@ -1,0 +1,671 @@
+{
+  "schema": "strategy-studio.methods.v1",
+  "fallback": "frame-problem",
+  "methods": [
+    {
+      "id": "future-back",
+      "name": "Future-back planning",
+      "archetype": "A1",
+      "priority": 3,
+      "summary": "Describe the future state you want in 5-10 years, then work backwards to the moves needed today.",
+      "keywords": {
+        "10 years": 3,
+        "ten years": 3,
+        "5 years": 2,
+        "five years": 2,
+        "2035": 3,
+        "2030": 3,
+        "long term": 3,
+        "long-range": 3,
+        "vision": 2,
+        "future state": 4,
+        "future": 1,
+        "where do we want to be": 4,
+        "north star": 3,
+        "reinvent": 2,
+        "decade": 3,
+        "backcast": 4,
+        "work backwards": 3,
+        "horizon": 2,
+        "transformation": 2,
+        "roadmap": 1,
+        "look like in": 3,
+        "get there first": 2,
+        "years from now": 4
+      },
+      "gates": [
+        "future-state-defined",
+        "gap-named",
+        "first-move-dated"
+      ],
+      "worksheet": [
+        {
+          "field": "future_state",
+          "prompt": "Describe the business in the target year as if it already happened."
+        },
+        {
+          "field": "target_year",
+          "prompt": "Which year is the future state set in?"
+        },
+        {
+          "field": "forces",
+          "prompt": "Which trends make that future plausible or likely?"
+        },
+        {
+          "field": "capability_gaps",
+          "prompt": "What must be true that is not true today?"
+        },
+        {
+          "field": "milestones",
+          "prompt": "Working backwards, list the milestones from the target year to now."
+        },
+        {
+          "field": "first_move",
+          "prompt": "What is the first move this quarter, and who owns it?"
+        }
+      ]
+    },
+    {
+      "id": "ten-types",
+      "name": "Ten Types of Innovation",
+      "archetype": "A1",
+      "priority": 4,
+      "summary": "Look past product features to the full set of innovation types: profit model, network, structure, process, product performance, product system, service, channel, brand, customer engagement.",
+      "keywords": {
+        "innovate": 3,
+        "innovation": 3,
+        "innovative": 3,
+        "differentiate": 3,
+        "differentiation": 3,
+        "new ideas": 2,
+        "commoditized": 3,
+        "commodity": 2,
+        "stand out": 2,
+        "copy us": 2,
+        "profit model": 4,
+        "customer engagement": 3,
+        "beyond the product": 3,
+        "fresh": 1,
+        "new offering": 2,
+        "competitors are copying": 3,
+        "me too": 2,
+        "reinvent the offer": 4,
+        "new business model": 4,
+        "business model": 3
+      },
+      "gates": [
+        "types-scanned",
+        "three-plus-types-combined",
+        "test-defined"
+      ],
+      "worksheet": [
+        {
+          "field": "current_types",
+          "prompt": "Which of the ten types does the business innovate on today?"
+        },
+        {
+          "field": "configuration",
+          "prompt": "Ideas for profit model, network, structure, process."
+        },
+        {
+          "field": "offering",
+          "prompt": "Ideas for product performance and product system."
+        },
+        {
+          "field": "experience",
+          "prompt": "Ideas for service, channel, brand, customer engagement."
+        },
+        {
+          "field": "combination",
+          "prompt": "Which 3+ types combine into one concept that is hard to copy?"
+        },
+        {
+          "field": "test",
+          "prompt": "Smallest test that would show the concept works."
+        }
+      ]
+    },
+    {
+      "id": "jobs-to-be-done",
+      "name": "Jobs to be done",
+      "archetype": "A1",
+      "priority": 2,
+      "summary": "Find the progress a customer is trying to make, the struggle that triggers a switch, and what they fire to hire you.",
+      "keywords": {
+        "customers": 2,
+        "customer": 1,
+        "buy from us": 3,
+        "why do people": 3,
+        "churn": 2,
+        "switch": 3,
+        "switching": 3,
+        "hire": 1,
+        "job to be done": 5,
+        "what job": 5,
+        "hiring our": 4,
+        "hire our": 4,
+        "jobs to be done": 5,
+        "jtbd": 5,
+        "need": 1,
+        "needs": 1,
+        "struggle": 3,
+        "pain": 2,
+        "adopt": 2,
+        "adoption": 2,
+        "what do users want": 4,
+        "users": 1,
+        "persona": 2,
+        "product market fit": 3,
+        "cancel": 2,
+        "underserved": 3,
+        "why customers": 4,
+        "leaving us": 4,
+        "leaving": 2,
+        "why do clients": 4,
+        "clients": 1,
+        "what do customers value": 5
+      },
+      "gates": [
+        "job-statement",
+        "switch-forces",
+        "competing-solutions"
+      ],
+      "worksheet": [
+        {
+          "field": "job_statement",
+          "prompt": "When [situation], I want to [motivation], so I can [outcome]."
+        },
+        {
+          "field": "push",
+          "prompt": "What pushes the customer away from the current solution?"
+        },
+        {
+          "field": "pull",
+          "prompt": "What pulls them toward a new one?"
+        },
+        {
+          "field": "anxiety",
+          "prompt": "What worries stop them from switching?"
+        },
+        {
+          "field": "habit",
+          "prompt": "What habits keep them where they are?"
+        },
+        {
+          "field": "competing_solutions",
+          "prompt": "What else could they hire for this job, including doing nothing?"
+        }
+      ]
+    },
+    {
+      "id": "pre-mortem",
+      "name": "Pre-mortem",
+      "archetype": "A4",
+      "priority": 1,
+      "summary": "Assume the plan has already failed, list the reasons, and add a mitigation or kill criterion for each.",
+      "keywords": {
+        "launch": 3,
+        "go live": 3,
+        "go-live": 3,
+        "rollout": 3,
+        "roll out": 3,
+        "ship": 2,
+        "deploy": 2,
+        "what could go wrong": 5,
+        "go wrong": 4,
+        "fail": 3,
+        "failure": 3,
+        "failing": 3,
+        "risks": 2,
+        "risk": 1,
+        "blind spots": 4,
+        "before we commit": 3,
+        "migration": 2,
+        "cutover": 3,
+        "kill criteria": 4,
+        "derail": 3,
+        "worst case": 3,
+        "weak spots": 4,
+        "goes out": 2,
+        "goes live": 3,
+        "go out": 2,
+        "what might break": 5,
+        "pitfalls": 4
+      },
+      "gates": [
+        "failure-story",
+        "top-risks-ranked",
+        "owner-per-mitigation",
+        "kill-criteria"
+      ],
+      "worksheet": [
+        {
+          "field": "plan",
+          "prompt": "One-paragraph statement of the plan and its success measure."
+        },
+        {
+          "field": "failure_story",
+          "prompt": "It is 12 months later and the plan failed. Write the story."
+        },
+        {
+          "field": "failure_reasons",
+          "prompt": "List every reason it failed. Rank by likelihood x impact."
+        },
+        {
+          "field": "mitigations",
+          "prompt": "For the top reasons: mitigation and named owner."
+        },
+        {
+          "field": "kill_criteria",
+          "prompt": "Which signal, by which date, means stop?"
+        }
+      ]
+    },
+    {
+      "id": "wardley-mapping",
+      "name": "Wardley-style mapping",
+      "archetype": "A2",
+      "priority": 5,
+      "summary": "Map the value chain from user need down to components, place each on an evolution axis (genesis to commodity), and decide where to build, buy or use utility.",
+      "keywords": {
+        "value chain": 4,
+        "map": 2,
+        "mapping": 2,
+        "wardley": 5,
+        "landscape": 3,
+        "evolution": 3,
+        "commodity": 1,
+        "components": 3,
+        "component": 2,
+        "stack": 2,
+        "platform": 2,
+        "infrastructure": 2,
+        "dependencies": 3,
+        "ecosystem": 2,
+        "where to invest": 3,
+        "standardize": 2,
+        "utility": 2,
+        "situational awareness": 4,
+        "moat": 2,
+        "commodity components": 4,
+        "supply chain of capabilities": 4
+      },
+      "gates": [
+        "user-need-anchor",
+        "components-placed",
+        "movement-noted",
+        "play-chosen"
+      ],
+      "worksheet": [
+        {
+          "field": "user",
+          "prompt": "Who is the user at the top of the map?"
+        },
+        {
+          "field": "user_need",
+          "prompt": "What need anchors the map?"
+        },
+        {
+          "field": "components",
+          "prompt": "List the components the need depends on, top to bottom."
+        },
+        {
+          "field": "evolution",
+          "prompt": "Place each component: genesis, custom-built, product, or commodity."
+        },
+        {
+          "field": "movement",
+          "prompt": "Which components are moving right (commoditizing), and how fast?"
+        },
+        {
+          "field": "play",
+          "prompt": "Where do we build, buy, or use a utility? What is the strategic play?"
+        }
+      ]
+    },
+    {
+      "id": "unit-economics",
+      "name": "Unit economics",
+      "archetype": "A2",
+      "priority": 2,
+      "summary": "Break the business into one unit (customer, order, seat) and check contribution margin, CAC, payback and lifetime value before scaling.",
+      "keywords": {
+        "profitable": 4,
+        "profitability": 4,
+        "profit": 2,
+        "margin": 3,
+        "margins": 3,
+        "cac": 5,
+        "ltv": 5,
+        "lifetime value": 4,
+        "payback": 4,
+        "cost per": 3,
+        "acquisition cost": 4,
+        "pricing": 3,
+        "price": 2,
+        "per customer": 3,
+        "per unit": 4,
+        "per order": 3,
+        "break even": 4,
+        "breakeven": 4,
+        "burn": 3,
+        "revenue": 1,
+        "economics": 3,
+        "scale": 1,
+        "unit": 2,
+        "making money": 4,
+        "losing money": 4,
+        "on each": 3,
+        "cost to serve": 4,
+        "gross margin": 4
+      },
+      "gates": [
+        "unit-defined",
+        "contribution-margin",
+        "cac-payback",
+        "sensitivity"
+      ],
+      "worksheet": [
+        {
+          "field": "unit",
+          "prompt": "What is one unit (customer, order, seat, location)?"
+        },
+        {
+          "field": "revenue_per_unit",
+          "prompt": "Average revenue per unit per period."
+        },
+        {
+          "field": "variable_cost_per_unit",
+          "prompt": "Variable cost per unit per period."
+        },
+        {
+          "field": "cac",
+          "prompt": "Fully loaded cost to acquire one unit."
+        },
+        {
+          "field": "retention",
+          "prompt": "Expected customer lifetime, in the same periods as revenue (for example months)."
+        },
+        {
+          "field": "sensitivity",
+          "prompt": "Which input, if 20% worse, breaks the model?"
+        }
+      ],
+      "calculator": "unit-economics"
+    },
+    {
+      "id": "build-vs-buy",
+      "name": "Build vs buy",
+      "archetype": "A2",
+      "priority": 1,
+      "summary": "Compare building, buying, partnering and doing nothing on total cost, time to value, control and exit cost.",
+      "keywords": {
+        "build or buy": 5,
+        "build vs buy": 5,
+        "buy or build": 5,
+        "make or buy": 5,
+        "build": 2,
+        "buy": 2,
+        "vendor": 3,
+        "vendors": 3,
+        "outsource": 4,
+        "in-house": 4,
+        "in house": 4,
+        "partner": 2,
+        "license": 2,
+        "saas": 2,
+        "off the shelf": 4,
+        "tco": 4,
+        "total cost of ownership": 5,
+        "acquire": 2,
+        "agency": 3,
+        "contractor": 3,
+        "third party": 3,
+        "run by": 2
+      },
+      "gates": [
+        "evidence-table",
+        "tco-bound",
+        "exit-cost",
+        "kill-criteria"
+      ],
+      "worksheet": [
+        {
+          "field": "capability",
+          "prompt": "What capability is being sourced, and is it core or context?"
+        },
+        {
+          "field": "options",
+          "prompt": "Options: build, buy, partner, do nothing."
+        },
+        {
+          "field": "tco",
+          "prompt": "Three-year total cost of each option (bounded range, not a point)."
+        },
+        {
+          "field": "time_to_value",
+          "prompt": "Time until each option delivers value."
+        },
+        {
+          "field": "control_and_exit",
+          "prompt": "Lock-in, control and exit cost for each option."
+        },
+        {
+          "field": "decision_rule",
+          "prompt": "What evidence would flip the decision?"
+        }
+      ]
+    },
+    {
+      "id": "reference-class-forecast",
+      "name": "Reference-class forecast",
+      "archetype": "A3",
+      "priority": 2,
+      "summary": "Start from the base rate of similar past cases, adjust for what is specific here, and state a calibrated probability.",
+      "keywords": {
+        "forecast": 4,
+        "predict": 4,
+        "prediction": 4,
+        "probability": 4,
+        "odds": 3,
+        "likely": 3,
+        "likelihood": 3,
+        "chance": 3,
+        "how long will": 4,
+        "estimate": 2,
+        "base rate": 5,
+        "will we hit": 4,
+        "on time": 2,
+        "how many": 1,
+        "expect": 1,
+        "timeline": 2,
+        "deadline": 2,
+        "succeed": 1
+      },
+      "gates": [
+        "reference-class",
+        "base-rate",
+        "adjustment-justified",
+        "calibrated-range"
+      ],
+      "worksheet": [
+        {
+          "field": "question",
+          "prompt": "Restate the forecast as a yes/no or numeric question with a resolution date."
+        },
+        {
+          "field": "reference_class",
+          "prompt": "Which set of similar past cases does this belong to?"
+        },
+        {
+          "field": "base_rate",
+          "prompt": "What happened in those cases (rate or distribution)?"
+        },
+        {
+          "field": "adjustments",
+          "prompt": "What is specific here that moves the estimate, and by how much?"
+        },
+        {
+          "field": "forecast",
+          "prompt": "Final probability or 80% interval."
+        },
+        {
+          "field": "disconfirming_signal",
+          "prompt": "What early signal would change the forecast?"
+        }
+      ]
+    },
+    {
+      "id": "real-options",
+      "name": "Real options portfolio",
+      "archetype": "A3",
+      "priority": 3,
+      "summary": "Treat uncertain bets as options: small entry cost, clear exit, and expected value = p(success) x upside - (1 - p) x downside.",
+      "keywords": {
+        "bets": 4,
+        "bet": 3,
+        "portfolio": 4,
+        "several options": 3,
+        "options": 2,
+        "which projects": 4,
+        "which initiatives": 4,
+        "prioritize": 3,
+        "allocate": 3,
+        "allocation": 3,
+        "invest": 2,
+        "uncertain": 3,
+        "uncertainty": 3,
+        "hedge": 3,
+        "expected value": 5,
+        "upside": 3,
+        "downside": 3,
+        "experiments": 2,
+        "where to place": 3,
+        "pilots": 3,
+        "pilot": 2,
+        "fund": 3,
+        "funding": 3,
+        "deserves": 2,
+        "which of our": 2
+      },
+      "gates": [
+        "options-listed",
+        "entry-exit-cost",
+        "expected-value",
+        "staging-plan"
+      ],
+      "worksheet": [
+        {
+          "field": "options",
+          "prompt": "List the candidate bets."
+        },
+        {
+          "field": "probability",
+          "prompt": "Probability of success for each (with its basis)."
+        },
+        {
+          "field": "upside",
+          "prompt": "Value if it works."
+        },
+        {
+          "field": "downside",
+          "prompt": "Cost if it fails, including exit cost."
+        },
+        {
+          "field": "staging",
+          "prompt": "What is the smallest stage that buys information before full commitment?"
+        }
+      ],
+      "calculator": "expected-value"
+    },
+    {
+      "id": "org-design",
+      "name": "Org design",
+      "archetype": "A1",
+      "priority": 4,
+      "summary": "Design roles, spans and decision rights from the work that needs doing, not from the current org chart.",
+      "keywords": {
+        "org": 3,
+        "organization": 2,
+        "reorg": 4,
+        "restructure": 4,
+        "team structure": 5,
+        "hire": 2,
+        "hiring": 3,
+        "headcount": 4,
+        "roles": 3,
+        "role": 2,
+        "reporting line": 4,
+        "span of control": 5,
+        "staff": 2,
+        "staffing": 3,
+        "decision rights": 4,
+        "who owns": 3,
+        "managers": 2,
+        "department": 3,
+        "organized": 3,
+        "organised": 3,
+        "structure the team": 5
+      },
+      "gates": [
+        "work-inventory",
+        "role-boundary",
+        "span-check",
+        "decision-rights"
+      ],
+      "worksheet": [
+        {
+          "field": "work",
+          "prompt": "List the work that must get done, independent of current roles."
+        },
+        {
+          "field": "roles",
+          "prompt": "Group the work into roles with clear boundaries."
+        },
+        {
+          "field": "spans",
+          "prompt": "Spans of control and layers for each manager."
+        },
+        {
+          "field": "decision_rights",
+          "prompt": "For each key decision: who decides, who is consulted."
+        },
+        {
+          "field": "transition",
+          "prompt": "How to move from the current org to the new one."
+        }
+      ]
+    },
+    {
+      "id": "frame-problem",
+      "name": "Problem framing",
+      "archetype": "A1",
+      "priority": 9,
+      "summary": "When the question is too vague to route, define the outcome, the decision to be made, and the non-goals first.",
+      "keywords": {},
+      "gates": [
+        "define-outcome",
+        "decision-named",
+        "non-goals"
+      ],
+      "worksheet": [
+        {
+          "field": "outcome",
+          "prompt": "What outcome would make this question answered?"
+        },
+        {
+          "field": "decision",
+          "prompt": "What decision will be made with the answer, and by whom?"
+        },
+        {
+          "field": "non_goals",
+          "prompt": "What is explicitly out of scope?"
+        },
+        {
+          "field": "rephrased_question",
+          "prompt": "Rewrite the question so it names a decision."
+        }
+      ]
+    }
+  ]
+}
