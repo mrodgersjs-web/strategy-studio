@@ -1,0 +1,47 @@
+{"question": "Where do we want the company to be in 2035, and what do we need to start now?", "expected": "future-back"}
+{"question": "What is our ten year vision for the clinic network?", "expected": "future-back"}
+{"question": "Help me work backwards from a future state where we are fully digital.", "expected": "future-back"}
+{"question": "What long term transformation should a regional bank plan over the next decade?", "expected": "future-back"}
+{"question": "Our north star for 2030 is unclear. How do we set it?", "expected": "future-back"}
+{"question": "Our product is commoditized and competitors copy every feature. How do we differentiate?", "expected": "ten-types"}
+{"question": "We need new ideas to innovate beyond the product itself.", "expected": "ten-types"}
+{"question": "Could a new profit model help us stand out in a crowded market?", "expected": "ten-types"}
+{"question": "How can a hardware store be more innovative than the big box chains?", "expected": "ten-types"}
+{"question": "Why do customers switch from our app to a spreadsheet?", "expected": "jobs-to-be-done"}
+{"question": "What job are people hiring our meal kit to do?", "expected": "jobs-to-be-done"}
+{"question": "Why do people cancel their subscription after the first month?", "expected": "jobs-to-be-done"}
+{"question": "Which underserved needs do small business owners struggle with in bookkeeping?", "expected": "jobs-to-be-done"}
+{"question": "Why customers adopt our competitor's tool instead of ours?", "expected": "jobs-to-be-done"}
+{"question": "We launch the new billing system next month. What could go wrong?", "expected": "pre-mortem"}
+{"question": "Before we commit to the warehouse migration, what are the blind spots?", "expected": "pre-mortem"}
+{"question": "How do we ship the agent workflow to production safely?", "expected": "pre-mortem"}
+{"question": "Imagine the rollout failed. Why did it fail?", "expected": "pre-mortem"}
+{"question": "What could derail the cutover to the new ERP?", "expected": "pre-mortem"}
+{"question": "Map our value chain and show which components are becoming a commodity.", "expected": "wardley-mapping"}
+{"question": "Which parts of our infrastructure stack should we standardize versus keep custom?", "expected": "wardley-mapping"}
+{"question": "Draw a Wardley map of the payments landscape.", "expected": "wardley-mapping"}
+{"question": "Where should we invest in the platform given how the ecosystem is evolving?", "expected": "wardley-mapping"}
+{"question": "Are we profitable per customer once you count acquisition cost?", "expected": "unit-economics"}
+{"question": "What is our CAC payback and LTV for the self-serve plan?", "expected": "unit-economics"}
+{"question": "Does the delivery business break even per order?", "expected": "unit-economics"}
+{"question": "How should we set pricing so margins hold at scale?", "expected": "unit-economics"}
+{"question": "Our burn is high. Do the economics per unit work?", "expected": "unit-economics"}
+{"question": "Should we build or buy an evaluation harness for our agent fleet?", "expected": "build-vs-buy"}
+{"question": "Do we keep payroll in-house or outsource it to a vendor?", "expected": "build-vs-buy"}
+{"question": "Make or buy: the analytics dashboard.", "expected": "build-vs-buy"}
+{"question": "Compare the total cost of ownership of an off the shelf CRM vs our own.", "expected": "build-vs-buy"}
+{"question": "What is the probability we hit the Q3 launch date?", "expected": "reference-class-forecast"}
+{"question": "Forecast how many enterprise deals we will close this year.", "expected": "reference-class-forecast"}
+{"question": "How long will the data platform project really take?", "expected": "reference-class-forecast"}
+{"question": "What are the odds a new location succeeds in its first year?", "expected": "reference-class-forecast"}
+{"question": "Which projects should get funding when everything is uncertain?", "expected": "real-options"}
+{"question": "We have five bets on the table. How do we allocate the budget?", "expected": "real-options"}
+{"question": "What is the expected value of entering the Canadian market?", "expected": "real-options"}
+{"question": "How do we prioritize a portfolio of experiments with big upside and limited downside?", "expected": "real-options"}
+{"question": "Should we restructure the sales team into regional pods?", "expected": "org-design"}
+{"question": "How much headcount do we need and which roles come first?", "expected": "org-design"}
+{"question": "Who owns pricing decisions after the reorg?", "expected": "org-design"}
+{"question": "What span of control should our store managers have?", "expected": "org-design"}
+{"question": "What matters here?", "expected": "frame-problem"}
+{"question": "Thoughts on this?", "expected": "frame-problem"}
+{"question": "Can you help me think?", "expected": "frame-problem"}

@@ -1,0 +1,22 @@
+{"question": "Picture the firm in 2040. What has to change this year to get there?", "expected": "future-back"}
+{"question": "What should our long term vision be for the next decade of growth?", "expected": "future-back"}
+{"question": "How can we reinvent the offer so rivals cannot copy it?", "expected": "ten-types"}
+{"question": "Our service feels like a commodity. Where can we innovate?", "expected": "ten-types"}
+{"question": "What pain makes a dentist switch practice software?", "expected": "jobs-to-be-done"}
+{"question": "Why do users churn after the free trial?", "expected": "jobs-to-be-done"}
+{"question": "The store opening is in two weeks. What are the main risks of failure?", "expected": "pre-mortem"}
+{"question": "Before rollout of the new scheduling tool, what might break?", "expected": "pre-mortem"}
+{"question": "Which components of our logistics stack are commoditizing?", "expected": "wardley-mapping"}
+{"question": "Sketch the landscape of our data infrastructure and its dependencies.", "expected": "wardley-mapping"}
+{"question": "What does it cost to serve one account, and what is the gross margin?", "expected": "unit-economics"}
+{"question": "At what price do we break even on each seat?", "expected": "unit-economics"}
+{"question": "Should IT security be handled by a third party or by us?", "expected": "build-vs-buy"}
+{"question": "Is it cheaper to license a scheduling SaaS than to build one?", "expected": "build-vs-buy"}
+{"question": "How likely is it that the factory upgrade finishes on time?", "expected": "reference-class-forecast"}
+{"question": "Estimate the chance our grant application is approved.", "expected": "reference-class-forecast"}
+{"question": "How should we split the innovation budget across uncertain bets?", "expected": "real-options"}
+{"question": "Which initiatives should we fund given the downside if they fail?", "expected": "real-options"}
+{"question": "Do we need a COO, or should the VPs report to the CEO directly?", "expected": "org-design"}
+{"question": "How many staff should each shift lead manage?", "expected": "org-design"}
+{"question": "Where do I even start?", "expected": "frame-problem"}
+{"question": "Is this a good idea?", "expected": "frame-problem"}

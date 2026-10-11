@@ -3,15 +3,23 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 [project]
 name = "strategy-studio"
-version = "0.1.0"
+version = "0.2.0"
 description = "Deterministic strategy question router"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
 dependencies = []
 [project.optional-dependencies]
-test = ["pytest>=7.4"]
+test = ["pytest>=7.4", "ruff>=0.6"]
 [project.scripts]
 strategy-route = "strategy_studio.cli:main"
+strategy-studio = "strategy_studio.cli:studio"
 [tool.setuptools.packages.find]
 where = ["src"]
+[tool.setuptools.package-data]
+strategy_studio = ["data/*.json", "data/*.jsonl"]
+[tool.ruff]
+line-length = 140
+target-version = "py310"
+[tool.ruff.lint]
+select = ["E", "F", "I", "B"]
