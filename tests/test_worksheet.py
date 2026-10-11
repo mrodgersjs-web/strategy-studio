@@ -86,6 +86,20 @@ def test_expected_value_nonfinite_amount_inputs_are_incomplete(field, value):
     assert r == {"status": "incomplete", "missing": [field]}
 
 
+@pytest.mark.parametrize(
+    ("answers", "missing"),
+    [
+        ({}, ["probability", "upside", "downside"]),
+        ({"probability": "0.5"}, ["upside", "downside"]),
+        ({"upside": "1000"}, ["probability", "downside"]),
+        ({"downside": "200"}, ["probability", "upside"]),
+        ({"probability": "bad", "upside": "nan"}, ["probability", "upside", "downside"]),
+    ],
+)
+def test_expected_value_missing_fields_keep_existing_order(answers, missing):
+    assert expected_value(answers) == {"status": "incomplete", "missing": missing}
+
+
 @pytest.mark.parametrize("probability", ["nan", "inf", "-inf"])
 def test_expected_value_nonfinite_probability_stays_invalid(probability):
     r = expected_value({"probability": probability, "upside": "1000", "downside": "200"})

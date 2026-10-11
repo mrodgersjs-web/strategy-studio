@@ -87,9 +87,8 @@ def expected_value(answers: dict[str, str]) -> dict:
     p = _num(answers, "probability")
     up = _num(answers, "upside")
     down = _num(answers, "downside")
-    missing = [k for k, v in {"probability": p, "upside": up, "downside": down}.items() if v is None]
-    missing += _missing_nonfinite({"upside": up, "downside": down})
-    missing = sorted(set(missing))
+    values = {"probability": p, "upside": up, "downside": down}
+    missing = [k for k, v in values.items() if v is None or (k in {"upside", "downside"} and not math.isfinite(v))]
     if missing:
         return {"status": "incomplete", "missing": missing}
     if p > 1:
