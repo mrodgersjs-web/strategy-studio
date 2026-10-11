@@ -1,6 +1,8 @@
 """Structured worksheets for a chosen method, plus small calculators."""
 from __future__ import annotations
 
+import math
+
 from .methods import Method
 from .scoring import Decision
 
@@ -36,6 +38,18 @@ def _num(answers: dict[str, str], key: str) -> float | None:
         return None
 
 
+def _missing_nonfinite(values: dict[str, float | None]) -> list[str]:
+    return [k for k, v in values.items() if v is None or not math.isfinite(v)]
+
+
+def _invalid_nonfinite_result() -> dict:
+    return {"status": "invalid", "error": "calculator result must be finite"}
+
+
+def _has_nonfinite_number(values) -> bool:
+    return any(isinstance(v, float) and not math.isfinite(v) for v in values)
+
+
 def unit_economics(answers: dict[str, str]) -> dict:
     """Contribution margin, CAC payback and LTV:CAC from worksheet answers.
 
@@ -45,7 +59,7 @@ def unit_economics(answers: dict[str, str]) -> dict:
     cost = _num(answers, "variable_cost_per_unit")
     cac = _num(answers, "cac")
     life = _num(answers, "retention")
-    missing = [k for k, v in {"revenue_per_unit": rev, "variable_cost_per_unit": cost, "cac": cac, "retention": life}.items() if v is None]
+    missing = _missing_nonfinite({"revenue_per_unit": rev, "variable_cost_per_unit": cost, "cac": cac, "retention": life})
     if missing:
         return {"status": "incomplete", "missing": missing}
     margin = rev - cost
@@ -57,6 +71,8 @@ def unit_economics(answers: dict[str, str]) -> dict:
     }
     out["payback_periods"] = round(cac / margin, 2) if margin > 0 else None
     out["ltv_to_cac"] = round(out["ltv"] / cac, 2) if cac > 0 else None
+    if _has_nonfinite_number(out.values()):
+        return _invalid_nonfinite_result()
     flags = []
     if margin <= 0:
         flags.append("negative contribution margin: each unit loses money before acquisition cost")
@@ -72,6 +88,8 @@ def expected_value(answers: dict[str, str]) -> dict:
     up = _num(answers, "upside")
     down = _num(answers, "downside")
     missing = [k for k, v in {"probability": p, "upside": up, "downside": down}.items() if v is None]
+    missing += _missing_nonfinite({"upside": up, "downside": down})
+    missing = sorted(set(missing))
     if missing:
         return {"status": "incomplete", "missing": missing}
     if p > 1:
@@ -79,6 +97,8 @@ def expected_value(answers: dict[str, str]) -> dict:
     if not 0 <= p <= 1:
         return {"status": "invalid", "error": "probability must be between 0 and 1 (or 0-100%)"}
     ev = p * up - (1 - p) * down
+    if not math.isfinite(ev):
+        return _invalid_nonfinite_result()
     return {"status": "ok", "probability": p, "expected_value": round(ev, 2), "positive": ev > 0}
 
 
