@@ -120,4 +120,4 @@ If `scripts/smoke.sh` fails, treat README claims as false until fixed.
 
 ---
 
-Built by Mike Rodgers · [rodgersintelligence.com](https://rodgersintelligence.com/)
+Built by Mike Rodgers · rodgersintelligence.com
