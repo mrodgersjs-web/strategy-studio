@@ -1,4 +1,4 @@
-# Evaluation strategy — Strategy Studio
+# Evaluation strategy - Strategy Studio
 
 ## Gates
 | Gate | Command | Pass |
