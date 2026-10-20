@@ -1,5 +1,9 @@
 # strategy-studio
 
+[![CI](https://img.shields.io/github/actions/workflow/status/mrodgersjs-web/strategy-studio/smoke.yml?branch=main)](https://github.com/mrodgersjs-web/strategy-studio/actions/workflows/smoke.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
+
 > Deterministic strategy routing: a business question goes in, a named strategy method comes out, with a scored explanation, an audit log entry and a worksheet.
 
 **Outcome:** `bash scripts/smoke.sh` routes six sample questions to six different methods, checks the hash-chained audit log, and runs the accuracy gates on a labelled set and a held-out set.
@@ -113,3 +117,7 @@ See [docs/public-boundary.md](docs/public-boundary.md). Sample questions are syn
 | Fleet | [profile](https://github.com/mrodgersjs-web) · [resume](https://github.com/mrodgersjs-web/resume) · [patents](https://github.com/mrodgersjs-web/patents) |
 
 If `scripts/smoke.sh` fails, treat README claims as false until fixed.
+
+---
+
+Built by Mike Rodgers · [rodgersintelligence.com](https://rodgersintelligence.com/)
