@@ -1,0 +1,14 @@
+{
+ "good": {
+  "count": 1326,
+  "sha256": "04020b6abac94a632c3f6c53c35383b88c5d1ef49dbcbd3cf877dc64767c6e4f",
+  "source": "Wikimedia Commons API",
+  "status": "candidate-unverified"
+ },
+ "bad": {
+  "count": 881,
+  "sha256": "d3f99a3c41eced062093536776d88e1cdf2e9b9f036d84b73acc0680d333eb2a",
+  "source": "Wikimedia Commons API",
+  "status": "candidate-unverified"
+ }
+}
