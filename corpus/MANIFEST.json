@@ -1,7 +1,7 @@
 {
  "good": {
-  "count": 177,
-  "sha256": "e091c44856df5e1fef851a8ac6d5245e4cd96f028a738ce8675168b5eedb5334",
+  "count": 380,
+  "sha256": "862f278febec1f71172ef115d74b19de54dd80873c9c2f45dd5ae08839c73644",
   "source": "Wikimedia Commons API + hosted jev-image",
   "status": "jev-verified",
   "supersets": {
@@ -13,13 +13,14 @@
    "corpus/verified.jsonl",
    "corpus/verified-retry.jsonl",
    "corpus/verified-topup.jsonl",
-   "corpus/verified-gate.jsonl"
+   "corpus/verified-gate.jsonl",
+   "corpus/verified-gate2.jsonl"
   ],
   "gate": "hosted jev-image, rubric well_designed|poorly_designed|photo, 2026-11-24"
  },
  "bad": {
-  "count": 179,
-  "sha256": "d5288c2b583f99a5aa009ebf1008670bad74e69258fe73970ae04cb52a027f25",
+  "count": 355,
+  "sha256": "525deeade67929d7c1d70fe9f809c20dc03aaccf501662e228fab6ea482abbbb",
   "source": "Wikimedia Commons API + hosted jev-image",
   "status": "jev-verified",
   "supersets": {
@@ -31,7 +32,8 @@
    "corpus/verified.jsonl",
    "corpus/verified-retry.jsonl",
    "corpus/verified-topup.jsonl",
-   "corpus/verified-gate.jsonl"
+   "corpus/verified-gate.jsonl",
+   "corpus/verified-gate2.jsonl"
   ],
   "gate": "hosted jev-image, rubric well_designed|poorly_designed|photo, 2026-11-24"
  },
