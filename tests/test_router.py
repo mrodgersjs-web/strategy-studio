@@ -1,4 +1,6 @@
 from strategy_studio.router import route_question
+
+
 def test_build_vs_buy():
     r = route_question("Should we build or buy an eval harness?")
     assert r.archetype == "A2" and "build-vs-buy" in r.cell

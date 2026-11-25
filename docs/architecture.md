@@ -1,19 +1,22 @@
-# Architecture — Strategy Studio
+# Architecture - Strategy Studio
 
 ## One-liner
-Deterministic strategy routing with gated decision records
+Deterministic routing of a business question to a named strategy method, with a scored
+explanation, an audit log and a worksheet.
 
-## Flow
-```text
-input → feature vector → route table → decision record → gate
-```
+## Modules
+| Module | Role |
+| --- | --- |
+| `data/methods.json` | method definitions: keywords and weights, priority, gates, worksheet fields |
+| `methods.py` | load + validate the methods file; version hash |
+| `scoring.py` | keyword scoring, ranking, decision, loser explanations |
+| `audit.py` | append-only hash-chained JSONL log; verify |
+| `worksheet.py` | worksheet builder, markdown render, unit-economics and expected-value calculators |
+| `evaluate.py` | accuracy on labelled question sets |
+| `cli.py` | `strategy-studio` (new) and `strategy-route` (legacy) |
+| `router.py` | legacy A1-A4 archetype router |
 
 ## Trust boundaries
-- Public inputs only in examples/fixtures
+- Public inputs only in examples and fixtures
 - Secrets never enter the repo
-- Completion claims require smoke/proof
-
-## Related
-- Profile: https://github.com/mrodgersjs-web
-- Doctrine: https://github.com/mrodgersjs-web/doctrine
-- Proof entry: https://github.com/mrodgersjs-web/proof-studio
+- No network calls and no LLM in the routing path

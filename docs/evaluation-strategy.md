@@ -1,9 +1,10 @@
-# Evaluation strategy — Strategy Studio
+# Evaluation strategy - Strategy Studio
 
 ## Gates
 | Gate | Command | Pass |
 | --- | --- | --- |
 | Smoke | `bash scripts/smoke.sh` | exit 0 |
+| Accuracy | `strategy-studio eval --holdout --min-accuracy 0.85` | exit 0 |
 | Boundary | `docs/public-boundary.md` exists | file present |
 | Claim integrity | README claims map to smoke | manual PR check |
 
