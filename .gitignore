@@ -12,3 +12,4 @@ corpus/good/topup.jsonl
 corpus/verified-topup.jsonl
 corpus/*.jsonl
 corpus/rendered/
+rigstrategy/run-ledger.jsonl

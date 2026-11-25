@@ -41,5 +41,26 @@
   "count": 1801,
   "jev_verified": 1327,
   "note": "RIG-rendered SVG->PNG set; 527 well_designed / 873 poorly_designed under the same rubric (render quality, not scrape quality)"
+ },
+ "v1_calibrated": {
+  "rubric": "yes_clean_readable|no_cluttered_or_unlabelled",
+  "question": "Is this chart clean and readable, with labelled axes or parts and a clear title?",
+  "gold_set": "corpus/gold-set.json (40 items, Mike-approved 2026-11-23 23:29 MT, 40/40 accuracy)",
+  "holdout_accuracy": "60/60 (44/44 good, 16/16 bad)",
+  "rendered": {
+   "total": 1800,
+   "confirmed_good": 1400,
+   "confirmed_bad": 400,
+   "sha256": "fd264979c2f2bcc6ed96724dc027a6ff09c41d12e1ea61ff6098ecad595fa526"
+  },
+  "commons": {
+   "total": 685,
+   "confirmed_good": 197,
+   "confirmed_bad": 151,
+   "sha256": "949db3183ab92d2cf27f6bd07a25392e711a0d9d375b8f3b54a1228b5ff44a3d"
+  },
+  "confirmed_good_total": 1597,
+  "confirmed_bad_total": 551,
+  "status": "jev-verified-calibrated"
  }
 }
