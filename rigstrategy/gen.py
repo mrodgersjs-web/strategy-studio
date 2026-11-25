@@ -111,7 +111,10 @@ STAGE_META = {
             "self-certifying visual quality when hosted jev-image is unreachable (must return DEFERRED)",
             "redistributing copyrighted third-party images instead of URL + hash + license references",
         ],
-        "visual_rule": "Compare every rendered figure against corpus/good/verified.jsonl exemplars and corpus/bad/verified.jsonl antipatterns via hosted jev-image.",
+        "visual_rule": (
+            "Compare every rendered figure against corpus/good/verified.jsonl exemplars "
+            "and corpus/bad/verified.jsonl antipatterns via hosted jev-image."
+        ),
     },
     "antipattern": {
         "purpose": "screen the strategy draft and its visuals against the catalogued bad-example corpus and analytical failure modes",
@@ -165,8 +168,10 @@ def build_all() -> int:
             f"audit hash receipts, visual corpus antipattern checks, and hosted Jev exit gates."
         )
         stage_body = f"""## Inputs & Defaults
-- **Required inputs:** Routed JSON receipt from `strategy-studio route --json "<question>"` (method ID, score, audit hash) and prior stage worksheet markdown.
-- **Default owner & boundary:** Owner `iris-strategy`; wraps `/strategy` doctrine without forking it. Tool = `strategy-studio` router; record = `.strategy-studio/audit.jsonl`.
+- **Required inputs:** Routed JSON receipt from `strategy-studio route --json "<question>"` (method ID, score, audit hash)
+  and prior stage worksheet markdown.
+- **Default owner & boundary:** Owner `iris-strategy`; wraps `/strategy` doctrine without forking it. Tool =
+  `strategy-studio` router; record = `.strategy-studio/audit.jsonl`.
 
 ## Workflow Steps
 1. Read `method` from the deterministic router JSON; never re-route with an LLM.
@@ -187,7 +192,8 @@ def build_all() -> int:
 
 ## Gate-D Checkpoint & Exit Gate
 - **CHECKPOINT (Gate-D):** Drafts only; stop for Mike's explicit approval of exact text before any outward send, publish, or spend.
-- **Output format / Done when:** Child `{sm['deliverable']}` written, sources cited or marked `UNVERIFIED`, audit hash attached, and hosted Jev returns `PASS` (or `DEFERRED` if offline).
+- **Output format / Done when:** Child `{sm['deliverable']}` written, sources cited or marked `UNVERIFIED`, audit hash
+  attached, and hosted Jev returns `PASS` (or `DEFERRED` if offline).
 """
         write_skill(LIB_ROOT / f"rs-{stage}" / "SKILL.md", f"rs-{stage}", stage_desc, stage_body)
 
@@ -214,14 +220,17 @@ def build_all() -> int:
 - **Method gates:** {gate_str}.
 - **Worksheet fields (`src/strategy_studio/data/methods.json`):**
 {ws_lines}
-- **Default inputs:** Redacted question, deterministic route JSON (`method`, `score`, `audit.hash`), and verified corpus indexes (`corpus/good/verified.jsonl`, `corpus/bad/verified.jsonl`).
+- **Default inputs:** Redacted question, deterministic route JSON (`method`, `score`, `audit.hash`), and verified corpus
+  indexes (`corpus/good/verified.jsonl`, `corpus/bad/verified.jsonl`).
 
 ## Workflow Steps
 1. Verify `route.method == "{mid}"` and confirm the audit chain via `rigstrategy/hooks/post-route-audit.sh`.
-2. Populate or update the `{mid}` worksheet fields required for stage `{stage}`, citing a source file/URL for every number or marking it `UNVERIFIED` / `GAP`.
+2. Populate or update the `{mid}` worksheet fields required for stage `{stage}`, citing a source file/URL for every number
+  or marking it `UNVERIFIED` / `GAP`.
 3. Apply the `{stage}` lens to {mname}: {sm['purpose']}.
 4. Check any tables or diagrams against the visual rule: {sm['visual_rule']}
-5. Hand the draft to `rs-agent-goldfish-verifier` (zero-context) or run `rigstrategy/workflows/rs-{mid}-{stage}.workflow.js`, then gate via `rigstrategy/hooks/pre-done-jev.sh`.
+5. Hand the draft to `rs-agent-goldfish-verifier` (zero-context) or run
+  `rigstrategy/workflows/rs-{mid}-{stage}.workflow.js`, then gate via `rigstrategy/hooks/pre-done-jev.sh`.
 
 ## Failure & Fallback Handling
 - **Route mismatch or missing audit hash:** STOP and re-run `rigstrategy/harness.py "<question>" --json`.
@@ -234,7 +243,8 @@ def build_all() -> int:
 
 ## Gate-D Checkpoint & Exit Gate
 - **CHECKPOINT (Gate-D):** Strictly inward drafts only; never send, publish, or commit spend without Mike's explicit approval of exact text.
-- **Output format / Done when:** Stage `{stage}` section appended as `{sm['deliverable']}`, method gates checked, audit hash linked, and hosted Jev returns `PASS` (or `DEFERRED` if down).
+- **Output format / Done when:** Stage `{stage}` section appended as `{sm['deliverable']}`, method gates checked, audit hash
+  linked, and hosted Jev returns `PASS` (or `DEFERRED` if down).
 """
             write_skill(LIB_ROOT / f"rs-{mid}-{stage}" / "SKILL.md", f"rs-{mid}-{stage}", step_desc, step_body)
             step_count += 1
@@ -280,7 +290,8 @@ def build_all() -> int:
         )
         body = f"""## Inputs & Defaults
 - **Role:** `{agent_name}` (owner `iris-strategy`, child of `/rigstrategy`).
-- **Context boundary:** `{agent_name}` operates only on the explicit artifact packet passed in (`routed JSON`, `worksheet markdown`, `audit hash`); verifier agents never inherit builder context.
+- **Context boundary:** `{agent_name}` operates only on the explicit artifact packet passed in (`routed JSON`, `worksheet
+  markdown`, `audit hash`); verifier agents never inherit builder context.
 
 ## Workflow Steps
 1. Inspect the incoming routed JSON receipt and target artifact verbatim before writing any finding.
@@ -422,7 +433,8 @@ def build_all() -> int:
     )
     harness_body = """## Inputs & Defaults
 - **Executable:** `python3 ~/Developer/strategy-studio/rigstrategy/harness.py "<question>" --json`
-- **Defaults:** Uses `.strategy-studio/audit.jsonl` (override with `--log`), links `/strategy` doctrine via `method-step-map.json`, and attaches verified good/bad corpus samples.
+- **Defaults:** Uses `.strategy-studio/audit.jsonl` (override with `--log`), links `/strategy` doctrine via
+  `method-step-map.json`, and attaches verified good/bad corpus samples.
 
 ## Workflow Steps
 1. Run `rigstrategy/hooks/pre-route-redact.sh` to scrub emails, keys, SSNs, and local paths (fail closed on empty input).
@@ -442,7 +454,8 @@ def build_all() -> int:
 - Never claim completion without a verified audit hash and Jev receipt.
 
 ## Gate-D Checkpoint & Exit Gate
-- **CHECKPOINT (Gate-D):** Harness outputs drafts and JSON receipts only; outward sends, publishes, or git pushes require Mike's explicit approval.
+- **CHECKPOINT (Gate-D):** Harness outputs drafts and JSON receipts only; outward sends, publishes, or git pushes require
+  Mike's explicit approval.
 - **Output format / Done when:** Valid `rigstrategy.harness.v1` JSON packet produced, audit chain verified, and Jev gate recorded.
 """
     write_skill(LIB_ROOT / "rs-harness" / "SKILL.md", "rs-harness", harness_desc, harness_body)
@@ -454,7 +467,8 @@ def build_all() -> int:
     )
     meta_body = """## Inputs & Defaults
 - **Executable:** `python3 ~/Developer/strategy-studio/rigstrategy/meta_harness.py --json`
-- **Fixed evaluation surface:** 136 `/rigstrategy` `SKILL.md` files (`skillopt_eval.py`), 110 `.workflow.js` files (`skilltoworkflow check`), 151+ `pytest` tests, and `rigstrategy/check_corpus.py`.
+- **Fixed evaluation surface:** 136 `/rigstrategy` `SKILL.md` files (`skillopt_eval.py`), 110 `.workflow.js` files
+  (`skilltoworkflow check`), 151+ `pytest` tests, and `rigstrategy/check_corpus.py`.
 
 ## Workflow Steps
 1. Run `python3 rigstrategy/meta_harness.py --json` and `make verify` to capture the locked baseline scorecard.
@@ -488,19 +502,26 @@ def build_all() -> int:
     stg_list = "\n".join(f"- `rs-{s}` - {STAGE_META[s]['purpose']}" for s in STAGES)
     meta_skill_body = f"""## Inputs & Defaults
 - **Repository:** `~/Developer/strategy-studio` (`mrodgersjs-web/strategy-studio`).
-- **Owner & Authority Map (skills-for-architects):** Single owner `iris-strategy`. `/rigstrategy` owns the deterministic routed orchestrator run (`rs-*`); `/strategy` owns domain doctrine (`strat-*`). `/rigstrategy` wraps `/strategy` and never forks it.
-- **Skill / Tool / Record Boundaries:** Skills live in Aside's skill surface (`rigstrategy` + `skill-library/rs-*`); deterministic tools live in `strategy-studio` + `rigstrategy/hooks/*.sh` + `rigstrategy/harness.py`; records live in `.strategy-studio/audit.jsonl` and `corpus/MANIFEST.json` (URL + hash + license only).
+- **Owner & Authority Map (skills-for-architects):** Single owner `iris-strategy`. `/rigstrategy` owns the deterministic
+  routed orchestrator run (`rs-*`); `/strategy` owns domain doctrine (`strat-*`). `/rigstrategy` wraps `/strategy` and never forks it.
+- **Skill / Tool / Record Boundaries:** Skills live in Aside's skill surface (`rigstrategy` + `skill-library/rs-*`);
+  deterministic tools live in `strategy-studio` + `rigstrategy/hooks/*.sh` + `rigstrategy/harness.py`; records live in
+  `.strategy-studio/audit.jsonl` and `corpus/MANIFEST.json` (URL + hash + license only).
 
 ## Workflow Steps
-1. Run `python3 ~/Developer/strategy-studio/rigstrategy/harness.py "<question>" --json` (executes `pre-route-redact.sh`, deterministic `strategy-studio route --json`, and `post-route-audit.sh`).
+1. Run `python3 ~/Developer/strategy-studio/rigstrategy/harness.py "<question>" --json` (executes `pre-route-redact.sh`,
+  deterministic `strategy-studio route --json`, and `post-route-audit.sh`).
 2. Walk the 10 stage metaskills in order, loading only the single `rs-<method>-<stage>` child for the routed method:
 {stg_list}
-3. Dispatch specialist roles as needed (`rs-agent-framer`, `rs-agent-analyst`, `rs-agent-red-teamer`, `rs-agent-numbers-checker`, `rs-agent-visual-judge`) and always verify independently with `rs-agent-goldfish-verifier`.
-4. Audit any visual diagrams against `corpus/good/verified.jsonl` and `corpus/bad/verified.jsonl` via hosted `jev-image` (calibrated v1 rubric: 40/40 gold set, 60/60 holdout).
+3. Dispatch specialist roles as needed (`rs-agent-framer`, `rs-agent-analyst`, `rs-agent-red-teamer`,
+  `rs-agent-numbers-checker`, `rs-agent-visual-judge`) and always verify independently with `rs-agent-goldfish-verifier`.
+4. Audit any visual diagrams against `corpus/good/verified.jsonl` and `corpus/bad/verified.jsonl` via hosted `jev-image`
+  (calibrated v1 rubric: 40/40 gold set, 60/60 holdout).
 5. Run `rigstrategy/hooks/pre-done-jev.sh` and `rigstrategy/hooks/post-run-learn.sh`; verify repo health via `make verify`.
 
 ## Failure & Fallback Handling
-- **Low-confidence or ambiguous question:** Fall back to `frame-problem` (`rs-frame-problem-frame`) and name explicit `GAP`s before recommending action.
+- **Low-confidence or ambiguous question:** Fall back to `frame-problem` (`rs-frame-problem-frame`) and name explicit `GAP`s
+  before recommending action.
 - **Hook or audit-chain failure:** STOP immediately and fix the underlying error; never bypass hooks.
 - **Hosted Jev / jev-image unreachable:** Return `DEFERRED`; never self-certify.
 
@@ -511,12 +532,18 @@ def build_all() -> int:
 - Do not fork `/strategy` doctrine into `/rigstrategy`.
 
 ## Corpus & Verification
-- **Visual corpus (`corpus/MANIFEST.json`):** 1,326 good / 881 bad scraped Wikimedia Commons candidates (URL + hash + license only) + 1,800 RIG-rendered SVG/PNG diagrams. Calibrated v1 Jev-image rubric (Mike-approved 40-item gold set 40/40, 60/60 holdout): 1,597 Jev-verified good (1,400 rendered + 197 Commons) and 551 Jev-verified bad (400 rendered + 151 Commons). Strict v0 rubric also retained in `MANIFEST.json` (380 Commons good, 355 Commons bad, 527 rendered good).
-- **Done-test:** `make verify` (pytest, 110/110 `skilltoworkflow check`, 136/136 `skillopt_eval.py`, 4 executable hooks, corpus gate, and `skill-surface where rigstrategy`).
+- **Visual corpus (`corpus/MANIFEST.json`):** 1,326 good / 881 bad scraped Wikimedia Commons candidates (URL + hash +
+  license only) + 1,800 RIG-rendered SVG/PNG diagrams. Calibrated v1 Jev-image rubric (Mike-approved 40-item gold set 40/40,
+  60/60 holdout): 1,597 Jev-verified good (1,400 rendered + 197 Commons) and 551 Jev-verified bad (400 rendered + 151
+  Commons). Strict v0 rubric also retained in `MANIFEST.json` (380 Commons good, 355 Commons bad, 527 rendered good).
+- **Done-test:** `make verify` (pytest, 110/110 `skilltoworkflow check`, 136/136 `skillopt_eval.py`, 4 executable hooks,
+  corpus gate, and `skill-surface where rigstrategy`).
 
 ## Gate-D Checkpoint & Exit Gate
-- **CHECKPOINT (Gate-D):** Drafts only, strictly inward. Never send, publish, spend, or push to a public repo without Mike's explicit approval of the exact text/action.
-- **Output format / Done when:** Routed JSON receipt, completed stage worksheet markdown, verified audit hash, independent verification note, and hosted Jev `PASS` (or `DEFERRED` if offline).
+- **CHECKPOINT (Gate-D):** Drafts only, strictly inward. Never send, publish, spend, or push to a public repo without Mike's
+  explicit approval of the exact text/action.
+- **Output format / Done when:** Routed JSON receipt, completed stage worksheet markdown, verified audit hash, independent
+  verification note, and hosted Jev `PASS` (or `DEFERRED` if offline).
 """
     write_skill(META_ROOT / "rigstrategy" / "SKILL.md", "rigstrategy", meta_skill_desc, meta_skill_body)
     return step_count
@@ -524,4 +551,5 @@ def build_all() -> int:
 
 if __name__ == "__main__":
     n = build_all()
-    print(f"generated rigstrategy meta + 10 stages + {n} steps + 6 agents + 4 hooks + 3 loops + 2 harnesses = {1 + 10 + n + 6 + 4 + 3 + 2} skills")
+    total = 1 + 10 + n + 6 + 4 + 3 + 2
+    print(f"generated rigstrategy meta + 10 stages + {n} steps + 6 agents + 4 hooks + 3 loops + 2 harnesses = {total} skills")

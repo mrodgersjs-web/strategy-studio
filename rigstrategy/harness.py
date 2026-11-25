@@ -13,10 +13,8 @@ import argparse
 import contextlib
 import io
 import json
-import os
 import pathlib
 import subprocess
-import sys
 
 from strategy_studio.cli import studio
 
@@ -112,7 +110,12 @@ def run_harness(question: str, audit_log: str | None = None) -> dict:
         "method_gates": method_def.get("gates", []),
         "worksheet_fields": method_def.get("worksheet", []),
         "stage_pipeline": [
-            {"stage": s, "metaskill": f"rs-{s}", "step_skill": f"rs-{method_id}-{s}", "workflow": f"rigstrategy/workflows/rs-{method_id}-{s}.workflow.js"}
+            {
+                "stage": s,
+                "metaskill": f"rs-{s}",
+                "step_skill": f"rs-{method_id}-{s}",
+                "workflow": f"rigstrategy/workflows/rs-{method_id}-{s}.workflow.js",
+            }
             for s in STAGES
         ],
         "agents": AGENTS,
