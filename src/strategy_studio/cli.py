@@ -17,15 +17,43 @@ from .worksheet import build_worksheet, render_markdown
 
 DEFAULT_LOG = ".strategy-studio/audit.jsonl"
 
-from .batch import route_batch, route_from_file, summarize_store
-from .integration import analyze_question
-from .jev_head import route_question_jev
-from .playbooks import get_playbook, list_playbooks
-from .records import DecisionStore, make_decision
-from .router import list_archetypes, route_question, to_dict
+# Optional richer-router modules: present on some installs, absent on a fresh clone
+# (they are not yet committed upstream). Degrade gracefully when missing.
+try:
+    from .batch import route_batch, route_from_file, summarize_store
+    from .integration import analyze_question
+    from .playbooks import get_playbook, list_playbooks
+    from .records import DecisionStore, make_decision
+    from .router import list_archetypes
+except (ImportError, ModuleNotFoundError):  # pragma: no cover - import guard
+    route_batch = route_from_file = summarize_store = None
+    analyze_question = None
+    get_playbook = list_playbooks = None
+    DecisionStore = make_decision = None
+    try:
+        from .router import list_archetypes
+    except ImportError:
+        list_archetypes = None
+
+RICH_CLI = route_batch is not None and list_archetypes is not None
+from .router import route_question, to_dict
+
+
+def _legacy_main(argv=None) -> int:
+    """Minimal ``strategy-route`` when the richer router modules are absent."""
+    p = argparse.ArgumentParser(prog="strategy-route")
+    p.add_argument("question")
+    p.add_argument("--json", action="store_true")
+    args = p.parse_args(argv)
+    d = to_dict(route_question(args.question))
+    print(json.dumps(d, indent=2) if args.json else
+          f"{d['archetype']} -> {d['cell']}\ngates: {', '.join(d['gates'])}\n{d['rationale']}")
+    return 0
 
 
 def main(argv=None) -> int:
+    if not RICH_CLI:
+        return _legacy_main(argv)
     p = argparse.ArgumentParser(
         prog="strategy-route",
         description="Deterministic strategy routing — question → archetype → cell → gates.",
