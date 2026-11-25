@@ -1,14 +1,43 @@
 {
  "good": {
-  "count": 1326,
-  "sha256": "04020b6abac94a632c3f6c53c35383b88c5d1ef49dbcbd3cf877dc64767c6e4f",
-  "source": "Wikimedia Commons API",
-  "status": "candidate-unverified"
+  "count": 177,
+  "sha256": "e091c44856df5e1fef851a8ac6d5245e4cd96f028a738ce8675168b5eedb5334",
+  "source": "Wikimedia Commons API + hosted jev-image",
+  "status": "jev-verified",
+  "supersets": {
+   "scraped_total": 1326,
+   "photo_or_not_chart": 290,
+   "contradicted": 98
+  },
+  "verified_files": [
+   "corpus/verified.jsonl",
+   "corpus/verified-retry.jsonl",
+   "corpus/verified-topup.jsonl",
+   "corpus/verified-gate.jsonl"
+  ],
+  "gate": "hosted jev-image, rubric well_designed|poorly_designed|photo, 2026-11-24"
  },
  "bad": {
-  "count": 881,
-  "sha256": "d3f99a3c41eced062093536776d88e1cdf2e9b9f036d84b73acc0680d333eb2a",
-  "source": "Wikimedia Commons API",
-  "status": "candidate-unverified"
+  "count": 179,
+  "sha256": "d5288c2b583f99a5aa009ebf1008670bad74e69258fe73970ae04cb52a027f25",
+  "source": "Wikimedia Commons API + hosted jev-image",
+  "status": "jev-verified",
+  "supersets": {
+   "scraped_total": 881,
+   "photo_or_not_chart": 233,
+   "contradicted": 76
+  },
+  "verified_files": [
+   "corpus/verified.jsonl",
+   "corpus/verified-retry.jsonl",
+   "corpus/verified-topup.jsonl",
+   "corpus/verified-gate.jsonl"
+  ],
+  "gate": "hosted jev-image, rubric well_designed|poorly_designed|photo, 2026-11-24"
+ },
+ "rendered": {
+  "count": 1801,
+  "jev_verified": 1327,
+  "note": "RIG-rendered SVG->PNG set; 527 well_designed / 873 poorly_designed under the same rubric (render quality, not scrape quality)"
  }
 }

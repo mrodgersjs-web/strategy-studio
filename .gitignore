@@ -8,3 +8,7 @@ __pycache__/
 htmlcov/
 corpus/*/index.jsonl
 corpus/verified.jsonl
+corpus/good/topup.jsonl
+corpus/verified-topup.jsonl
+corpus/*.jsonl
+corpus/rendered/

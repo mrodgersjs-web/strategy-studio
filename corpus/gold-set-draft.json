@@ -1,0 +1,242 @@
+[
+ {
+  "path": "corpus/rendered/quad-good-45e433c3f3.png",
+  "proposed": "good",
+  "reason": "labelled axes, 4 named quadrants, action title",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/quad-good-2e5b491561.png",
+  "proposed": "good",
+  "reason": "labelled axes, 4 named quadrants, action title",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/quad-good-825fab9dab.png",
+  "proposed": "good",
+  "reason": "labelled axes, 4 named quadrants, action title",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/quad-good-3f696a8617.png",
+  "proposed": "good",
+  "reason": "labelled axes, 4 named quadrants, action title",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/quad-bad-c08b288f5e.png",
+  "proposed": "bad",
+  "reason": "chartjunk, neon background, buzzwords, no axes",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/quad-bad-a40aa90e07.png",
+  "proposed": "bad",
+  "reason": "chartjunk, neon background, buzzwords, no axes",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/quad-bad-b12219b5f3.png",
+  "proposed": "bad",
+  "reason": "chartjunk, neon background, buzzwords, no axes",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/quad-bad-8a7e188f10.png",
+  "proposed": "bad",
+  "reason": "chartjunk, neon background, buzzwords, no axes",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/bars-good-68e08ffa57.png",
+  "proposed": "good",
+  "reason": "sorted, one highlight colour, action title, labelled axis",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/bars-good-3948312f20.png",
+  "proposed": "good",
+  "reason": "sorted, one highlight colour, action title, labelled axis",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/bars-good-e4581b2eb7.png",
+  "proposed": "good",
+  "reason": "sorted, one highlight colour, action title, labelled axis",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/bars-good-1f0768174a.png",
+  "proposed": "good",
+  "reason": "sorted, one highlight colour, action title, labelled axis",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/bars-bad-99f4ce04f5.png",
+  "proposed": "bad",
+  "reason": "truncated axis, rainbow colors, heavy grid, no title",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/bars-bad-a3e9373c7c.png",
+  "proposed": "bad",
+  "reason": "truncated axis, rainbow colors, heavy grid, no title",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/bars-bad-f4538b42ad.png",
+  "proposed": "bad",
+  "reason": "truncated axis, rainbow colors, heavy grid, no title",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/bars-bad-1580c1387a.png",
+  "proposed": "bad",
+  "reason": "truncated axis, rainbow colors, heavy grid, no title",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/waterfall-good-ce1eb751d5.png",
+  "proposed": "good",
+  "reason": "labelled steps, scale, contribution in title",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/waterfall-good-7ffa078341.png",
+  "proposed": "good",
+  "reason": "labelled steps, scale, contribution in title",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/waterfall-good-74c81efbc.png",
+  "proposed": "good",
+  "reason": "labelled steps, scale, contribution in title",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/waterfall-good-319d70d787.png",
+  "proposed": "good",
+  "reason": "labelled steps, scale, contribution in title",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/waterfall-bad-7be47f6acc.png",
+  "proposed": "bad",
+  "reason": "no labels or scale, random colors",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/waterfall-bad-1a9d25f79b.png",
+  "proposed": "bad",
+  "reason": "no labels or scale, random colors",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/waterfall-bad-181dd93642.png",
+  "proposed": "bad",
+  "reason": "no labels or scale, random colors",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/waterfall-bad-e38bfcc5f1.png",
+  "proposed": "bad",
+  "reason": "no labels or scale, random colors",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/tree-good-1425e1e9a6.png",
+  "proposed": "good",
+  "reason": "clear branches with EV values, recommendation title",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/tree-good-b921e517d4.png",
+  "proposed": "good",
+  "reason": "clear branches with EV values, recommendation title",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/tree-good-70a195aa1f.png",
+  "proposed": "good",
+  "reason": "clear branches with EV values, recommendation title",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/tree-good-ca582abdc2.png",
+  "proposed": "good",
+  "reason": "clear branches with EV values, recommendation title",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/tree-bad-1c6cf6d84a.png",
+  "proposed": "bad",
+  "reason": "spaghetti, no structure or values",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/tree-bad-cb02525b6c.png",
+  "proposed": "bad",
+  "reason": "spaghetti, no structure or values",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/tree-bad-64202efce.png",
+  "proposed": "bad",
+  "reason": "spaghetti, no structure or values",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/tree-bad-b86ae20720.png",
+  "proposed": "bad",
+  "reason": "spaghetti, no structure or values",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/pie-good-eeb86816c6.png",
+  "proposed": "good",
+  "reason": "bar chart replaces pie, % axis, title",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/pie-good-79a265d3a.png",
+  "proposed": "good",
+  "reason": "bar chart replaces pie, % axis, title",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/pie-good-a8d988d5cf.png",
+  "proposed": "good",
+  "reason": "bar chart replaces pie, % axis, title",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/pie-good-795be5614a.png",
+  "proposed": "good",
+  "reason": "bar chart replaces pie, % axis, title",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/pie-bad-5ac51d08fd.png",
+  "proposed": "bad",
+  "reason": "14-slice exploded pie",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/pie-bad-c7bb2728bd.png",
+  "proposed": "bad",
+  "reason": "14-slice exploded pie",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/pie-bad-82733b09e1.png",
+  "proposed": "bad",
+  "reason": "14-slice exploded pie",
+  "mike_label": null
+ },
+ {
+  "path": "corpus/rendered/pie-bad-17d43d1317.png",
+  "proposed": "bad",
+  "reason": "14-slice exploded pie",
+  "mike_label": null
+ }
+]
